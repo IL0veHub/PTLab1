@@ -2,22 +2,23 @@ from src.DataReaderXML import DataReaderXML
 import pytest
 from src.Types import DataType
 
+
 class TestDataReaderXML:
 
     @pytest.fixture()
     def file_and_data_content(self) -> tuple[str, DataType]:
         text = "<students\n>" + \
-                    "<student>\n" + \
-                        "<name>Иванов</name>\n" + \
-                        "<scores>\n" + \
-                            "<object>\n" + \
-                                "<object_name>Физика</object_name>\n" + \
-                                "<object_value>76</object_value>\n" + \
-                            "</object>\n" + \
-                        "</scores>\n" + \
-                    "</student>\n" + \
+                "<student>\n" + \
+                "<name>Иванов</name>\n" + \
+                "<scores>\n" + \
+                "<object>\n" + \
+                "<object_name>Физика</object_name>\n" + \
+                "<object_value>76</object_value>\n" + \
+                "</object>\n" + \
+                "</scores>\n" + \
+                "</student>\n" + \
                 "</students>\n"
-        data = [{"name": "Иванов", "score": {"Физика":76}}]
+        data = [{"name": "Иванов", "score": {"Физика": 76}}]
         return text, data
 
     @pytest.fixture()
