@@ -3,7 +3,7 @@ import argparse
 import sys
 
 from CalcRating import CalcRating
-from TextDataReader import TextDataReader
+from DataReaderXML import DataReaderXML
 
 
 def get_path_from_arguments(args) -> str:
@@ -17,12 +17,13 @@ def get_path_from_arguments(args) -> str:
 def main():
     path = get_path_from_arguments(sys.argv[1:])
 
-    reader = TextDataReader()
+    reader = DataReaderXML()
     students = reader.read(path)
-    print("Students: ", students)
+    print(students)
+    #print("Students: ", students)
 
-    rating = CalcRating(students).calc()
-    print("Rating: ", rating)
+    #rating = CalcRating(students).calc()
+    #print("Rating: ", rating)
 
 
 if __name__ == "__main__":
