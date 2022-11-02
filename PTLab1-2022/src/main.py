@@ -2,7 +2,7 @@
 import argparse
 import sys
 
-from CalcRating import CalcRating
+from CalcStudents import CalcStudents
 from DataReaderXML import DataReaderXML
 
 
@@ -19,11 +19,10 @@ def main():
 
     reader = DataReaderXML()
     students = reader.read(path)
-    print(students)
-    #print("Students: ", students)
+    print("Students: ", students)
 
-    #rating = CalcRating(students).calc()
-    #print("Rating: ", rating)
+    calc_student = CalcStudents(students).calc()
+    print("Students more four: ", calc_student)
 
 
 if __name__ == "__main__":
